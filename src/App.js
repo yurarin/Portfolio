@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import { useState, useEffect } from "react";
 import './App.css';
 
 function App() {
+  const [userData, setUserData] = useState("");
+  const [userIconData, setIconData] = useState("");
+
+  const getAPI = async () => {
+    const fetchData = await fetch("https://yurari.microcms.io/api/v1/profile",
+    {"headers" : { "X-MICROCMS-API-KEY" : "SoWrYdhI38HUcJMQVWqhITOl3bvtBC4XBmMg" }});
+    const fetchDataJSON = await fetchData.json();
+    console.log(fetchDataJSON);
+    await setUserData(fetchDataJSON);
+    await setIconData(fetchDataJSON.icon)
+  }
+
+  useEffect(() => {
+    getAPI();
+  },[]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {userData.name}
+        {userData.url}
+        {userData.bio}
+        {userIconData.url}
     </div>
   );
 }

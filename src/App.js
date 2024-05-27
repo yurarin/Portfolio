@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
+import { Routes, Route } from "react-router-dom";
+import { Home, About, Work, Blog } from "./pagesIndex";
 
 function App() {
   const [userData, setUserData] = useState("");
@@ -22,6 +24,25 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Routes>
+        <Route
+          path="/"
+          element={<Home userName={userData.name} iconUrl={userIconData.url} />}
+        />
+        <Route
+          path="/about"
+          element={
+            <About
+              userName={userData.name}
+              url={userData.url}
+              bio={userData.bio}
+              iconUrl={userIconData.url}
+            />
+          }
+        />
+        <Route path="/work" element={<Work />} />
+        <Route path="/blog" element={<Blog />} />
+      </Routes>
       {/* userName={userData.name}
       url={userData.url}
       bio={userData.bio}

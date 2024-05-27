@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/header.css";
-import { Routes, Route, Link } from "react-router-dom";
-import About from "../About";
+import { Link } from "react-router-dom";
 
 const UrlAgn = () => {
   return (
@@ -15,11 +14,6 @@ const UrlAgn = () => {
       <Link to="/blog" className="urlAgnItem">
         Blog
       </Link>
-      <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/work" element={null} />
-        <Route path="/blog" element={null} />
-      </Routes>
     </div>
   );
 };

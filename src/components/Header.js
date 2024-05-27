@@ -2,8 +2,7 @@ import React from "react";
 import Logo from "../assets/logo.svg";
 import "../styles/header.css";
 import UrlAgn from "./UrlAgn";
-import { Routes, Route, Link } from "react-router-dom";
-import App from "../App";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -14,9 +13,6 @@ const Header = () => {
         </Link>
         <UrlAgn />
       </header>
-      <Routes>
-        <Route path="/" element={<App />} />
-      </Routes>
     </React.Fragment>
   );
 };

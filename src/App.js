@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+import Header from "./components/Header";
 
 function App() {
   const [userData, setUserData] = useState("");
@@ -21,10 +21,11 @@ function App() {
 
   return (
     <div className="App">
-      {userData.name}
-      {userData.url}
-      {userData.bio}
-      {userIconData.url}
+      <Header />
+      {/* userName={userData.name}
+      url={userData.url}
+      bio={userData.bio}
+      iconUrl={userIconData.url} */}
     </div>
   );
 }

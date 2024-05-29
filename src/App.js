@@ -12,7 +12,7 @@ function App() {
       headers: { "X-MICROCMS-API-KEY": "SoWrYdhI38HUcJMQVWqhITOl3bvtBC4XBmMg" },
     });
     const fetchDataJSON = await fetchData.json();
-    console.log(fetchDataJSON);
+    // console.log(fetchDataJSON);
     setUserData(fetchDataJSON);
     setIconData(fetchDataJSON.icon);
   };
@@ -27,21 +27,37 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home userName={userData.name} iconUrl={userIconData.url} />}
+          element={
+            <Home 
+              userName={userData.name} 
+              iconUrl={userIconData.url} 
+              bio={userData.bio} 
+            />
+          }
         />
         <Route
           path="/about"
           element={
             <About
-              userName={userData.name}
-              url={userData.url}
-              bio={userData.bio}
-              iconUrl={userIconData.url}
+              userName={userData.name} 
+              url={userData.url} 
+              bio={userData.bio} 
+              iconUrl={userIconData.url} 
             />
           }
         />
-        <Route path="/work" element={<Work />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route 
+          path="/work" 
+          element={
+            <Work />
+          } 
+        />
+        <Route 
+          path="/blog" 
+          element={
+            <Blog />
+          } 
+        />
       </Routes>
       {/* userName={userData.name}
       url={userData.url}

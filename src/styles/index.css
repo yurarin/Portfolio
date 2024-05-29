@@ -16,7 +16,8 @@ body {
 }
 
 .item {
-  width: 43%;
+  width: 43%;    
+  text-align: center;
 }
 
 .item img {
@@ -32,7 +33,9 @@ body {
 @media (width <= 980px) {
   .item {
     width: 100%;
-    text-align: center;
+  }
+  .item img {
+    width: 60%;
   }
 }
 

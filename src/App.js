@@ -6,6 +6,7 @@ import { Home, About, Work, Blog } from "./pagesIndex";
 function App() {
   const [userData, setUserData] = useState("");
   const [userIconData, setIconData] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const getAPI = async () => {
     const fetchData = await fetch("https://yurari.microcms.io/api/v1/profile", {
@@ -15,11 +16,16 @@ function App() {
     // console.log(fetchDataJSON);
     setUserData(fetchDataJSON);
     setIconData(fetchDataJSON.icon);
+    setIsLoading(false);
   };
 
   useEffect(() => {
     getAPI();
   }, []);
+
+  if (isLoading) {
+    return
+  }
 
   return (
     <div className="App">
@@ -41,7 +47,7 @@ function App() {
             <About
               userName={userData.name} 
               url={userData.url} 
-              bio={userData.bio} 
+              bioDetail={userData.bio_detail} 
               iconUrl={userIconData.url} 
             />
           }

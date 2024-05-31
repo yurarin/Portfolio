@@ -49,6 +49,7 @@ function App() {
               url={userData.url} 
               bioDetail={userData.bio_detail} 
               iconUrl={userIconData.url} 
+              userData={userData}
             />
           }
         />

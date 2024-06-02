@@ -6,16 +6,21 @@ import { Home, About, Work, Blog } from "./pagesIndex";
 function App() {
   const [userData, setUserData] = useState("");
   const [userIconData, setIconData] = useState("");
+  const [userWorkData, setWorkData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const getAPI = async () => {
-    const fetchData = await fetch("https://yurari.microcms.io/api/v1/profile", {
+    const fetchProfileData = await fetch("https://yurari.microcms.io/api/v1/profile", {
       headers: { "X-MICROCMS-API-KEY": "SoWrYdhI38HUcJMQVWqhITOl3bvtBC4XBmMg" },
     });
-    const fetchDataJSON = await fetchData.json();
-    // console.log(fetchDataJSON);
-    setUserData(fetchDataJSON);
-    setIconData(fetchDataJSON.icon);
+    const fetchWorkData = await fetch("https://yurari.microcms.io/api/v1/work", {
+      headers: { "X-MICROCMS-API-KEY": "SoWrYdhI38HUcJMQVWqhITOl3bvtBC4XBmMg" },
+    });
+    const fetchProfileDataJSON = await fetchProfileData.json();
+    const fetchWorkDataJSON = await fetchWorkData.json();
+    setUserData(fetchProfileDataJSON);
+    setIconData(fetchProfileDataJSON.icon);
+    setWorkData(fetchWorkDataJSON);
     setIsLoading(false);
   };
 
@@ -56,7 +61,9 @@ function App() {
         <Route 
           path="/work" 
           element={
-            <Work />
+            <Work 
+              works={userWorkData}
+            />
           } 
         />
         <Route 

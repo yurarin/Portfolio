@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    background: #ffffffc7;
+}
+
+.urlAgn {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.urlAgnItem {
+    margin: 10px;
+    text-decoration: none;
+    color: #4168aa;
+}

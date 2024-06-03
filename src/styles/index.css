@@ -151,7 +151,7 @@ hr {
 }
 
 .workTitle {
-  letter-spacing: 5px;
+  letter-spacing: 6px;
 }
 
 .workContainer {
@@ -249,6 +249,69 @@ hr {
   width: 100%;
   border: solid 1px #ebebeb;
   border-radius: 20px;
+}
+.blogViewTitle {
+  letter-spacing: 10px;
+}
+.blogViewDetail {
+  letter-spacing: 5px;
+}
+
+.articleBox {
+  margin: 10px;
+  padding-top: 20px;
+}
+.articleBox .date {
+  font-size: 13px;
+  color: #3b3b3b;
+  letter-spacing: 5px;
+}
+.articleBox .head {
+  font-size: 14px;
+  color: #8f8f8f;
+  letter-spacing: 3px;
+}
+.articleBox h3 {
+  letter-spacing: 3.5px;
+  font-size: 18px;
+}
+
+.blogView {
+  width: 100%;
+  padding-bottom: 80px;
+}
+
+.blogDate {
+  letter-spacing: 5px;
+  font-size: 13px;
+  color: #5a5a5a;
+}
+
+.blogTitle {
+  font-size: 23px;
+  letter-spacing: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.blogHead {
+  letter-spacing: 5px;
+  font-size: 13px;
+  color: #555555;
+}
+
+.blogBody {
+  letter-spacing: 5px;
+}
+
+.blogBody img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.blogBody a {
+  color: #2673a7;
 }
 
 /* viewContainerSystem */

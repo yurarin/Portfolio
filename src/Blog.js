@@ -1,10 +1,57 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
+  const [API, setAPI] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+
+  const getAPI = async () => {
+    const getFetch = await fetch(
+      "https://yurari.microcms.io/api/v1/blog", 
+      {headers: {"X-MICROCMS-API-KEY": "SoWrYdhI38HUcJMQVWqhITOl3bvtBC4XBmMg"}}
+    );
+    const getJson = await getFetch.json();
+    setAPI(getJson.contents);
+    setIsLoading(false);
+  } 
+
+  // dayjs init
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+
+  useEffect(() => {
+    getAPI();
+  }, []);
+  
+  if (isLoading) {
+    return (
+      <div className="view-container">
+        <p>記事の読み込み中です...</p>
+      </div>
+    )
+  }
+
+  const article = API.map((article) => {
+    return (
+      <div key={article.id} className="articleBox">
+        <Link  className="link" to={article.id}>
+          <p className="date">{dayjs.utc(article.created_at).tz("Asia/Tokyo").format("YYYY-MM-DD / HH:mm")}</p>
+          <h3>{article.title}</h3>
+          <p className="head">{article.head}</p>
+          <hr />
+        </Link>
+      </div>
+    )
+  })
+
   return (
-    <div>
-      <h1>blogですよー</h1>
-      <p>blogページ</p>
+    <div className="view-container">
+      <h1 className="blogViewTitle">ゆらりの雑記帳</h1>
+      <p className="blogViewDetail">殴り書き用ノート</p>
+      {article}
     </div>
   );
 };

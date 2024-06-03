@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
-import { Home, About, Work, Blog, WorkDetail } from "./pagesIndex";
+import { Home, About, Work, Blog, WorkDetail, Article } from "./pagesIndex";
 
 function App() {
   const [userData, setUserData] = useState("");
@@ -76,6 +76,12 @@ function App() {
           path="/blog" 
           element={
             <Blog />
+          } 
+        />
+        <Route 
+          path="/blog/:id" 
+          element={
+            <Article />
           } 
         />
       </Routes>

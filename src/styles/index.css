@@ -233,6 +233,24 @@ hr {
     height: 120px;
   }
 }
+
+.link {
+  text-decoration: none;
+  color: #2e2e2e;
+}
+
+.workDetail {
+  padding-bottom: 100px;
+}
+.workDetail h2{
+  letter-spacing: 4.5px;
+}
+.workDetail img {
+  width: 100%;
+  border: solid 1px #ebebeb;
+  border-radius: 20px;
+}
+
 /* viewContainerSystem */
 .view-container {
   padding-right: 15px;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
-import { Home, About, Work, Blog } from "./pagesIndex";
+import { Home, About, Work, Blog, WorkDetail } from "./pagesIndex";
 
 function App() {
   const [userData, setUserData] = useState("");
@@ -64,6 +64,12 @@ function App() {
             <Work 
               works={userWorkData}
             />
+          } 
+        />
+        <Route 
+          path="/work/:id" 
+          element={
+            <WorkDetail />
           } 
         />
         <Route 

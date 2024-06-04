@@ -242,6 +242,10 @@ hr {
 .workDetail {
   padding-bottom: 100px;
 }
+.workDetail p {
+  letter-spacing: 3.3px;
+  font-size: 14.5px;
+}
 .workDetail h2{
   letter-spacing: 4.5px;
 }
@@ -267,7 +271,7 @@ hr {
   letter-spacing: 5px;
 }
 .articleBox .head {
-  font-size: 14px;
+  font-size: 12.5px;
   color: #8f8f8f;
   letter-spacing: 3px;
 }
@@ -312,6 +316,15 @@ hr {
 
 .blogBody a {
   color: #2673a7;
+}
+
+.blogBody p {
+  font-size: 13px;
+  margin-bottom: 30.5px;
+}
+
+.blogBody h1, .blogBody h2, .blogBody h3 {
+  margin-top: 55px;
 }
 
 /* viewContainerSystem */

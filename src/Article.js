@@ -21,7 +21,7 @@ const Article = () => {
     }
     useEffect(() => {
         getAPI();
-    },[]);
+    });
 
     if (isLoading) {
         return (

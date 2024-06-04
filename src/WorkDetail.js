@@ -18,7 +18,7 @@ const WorkDetail = () => {
     }
     useEffect(() => {
         getAPI();
-    },[]);
+    });
 
     if (isLoading) {
         return (
@@ -32,7 +32,7 @@ const WorkDetail = () => {
     <div className="view-container">
         <div className="workDetail">
             <h2>{API.title}</h2>
-            <img src={API.work_img.url} />
+            <img src={API.work_img.url} alt="img" />
             <p dangerouslySetInnerHTML={{__html: API.about}} />
         </div>
     </div>

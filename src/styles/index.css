@@ -70,6 +70,7 @@ body {
 }
 .detailText {
   padding: 40px;
+  line-height: 35px;
 }
 .detailText .userName {
   font-size: 34px;
@@ -145,6 +146,11 @@ hr {
   }
 }
 
+a {
+  color: #265a9e;
+  text-decoration: underline;
+}
+
 .userLink {
   font-size: 30px;
   color: #265a9e;
@@ -161,7 +167,6 @@ hr {
 }
 
 .workItem {
-  background: #f3f3f3;  
   border: 1px solid #ebebeb;
   margin: 10px;
   width: 360px;
@@ -182,8 +187,11 @@ hr {
 }
 
 .workItemData {
+  background: #fcfcfc;  
+  border-top: 0.5px solid #d9d9d9;
   padding-left: 15px;
   padding-bottom: 10px;
+  border-radius: 0px 0px 9px 9px;
 }
 
 .workItem:hover {
@@ -241,6 +249,7 @@ hr {
 
 .workDetail {
   padding-bottom: 100px;
+  line-height: 35px;
 }
 .workDetail p {
   letter-spacing: 3.3px;
@@ -252,7 +261,7 @@ hr {
 .workDetail img {
   width: 100%;
   border: solid 1px #ebebeb;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 .blogViewTitle {
   letter-spacing: 10px;

@@ -49,8 +49,8 @@ const Blog = () => {
 
   return (
     <div className="view-container">
-      <h1 className="blogViewTitle">ゆらりの雑記帳</h1>
-      <p className="blogViewDetail">殴り書き用ノート</p>
+      <h1 className="blogViewTitle">雑記帳</h1>
+      <p className="blogViewDetail">ログデータ</p>
       {article}
     </div>
   );

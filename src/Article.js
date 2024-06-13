@@ -4,12 +4,13 @@ import "./styles/index.css";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
+import hljs from 'highlight.js';
+import './styles/vs2015.css';
 
 const Article = () => {
     const { id } = useParams();
     const [API, setAPI] = useState("");
     const [isLoading, setIsLoading] = useState(true);
-
     const getAPI = async () => {
         const getFetch = await fetch(
             `https://yurari.microcms.io/api/v1/blog/${id}`, 
@@ -18,9 +19,11 @@ const Article = () => {
         const getJson = await getFetch.json();
         setAPI(getJson);
         setIsLoading(false);
+
     }
     useEffect(() => {
         getAPI();
+        hljs.highlightAll();
     });
 
     if (isLoading) {

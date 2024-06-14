@@ -13,18 +13,20 @@ const Article = () => {
     const [isLoading, setIsLoading] = useState(true);
     const getAPI = async () => {
         const getFetch = await fetch(
-            `https://yurari.microcms.io/api/v1/blog/${id}`, 
-            {headers: {"X-MICROCMS-API-KEY": "SoWrYdhI38HUcJMQVWqhITOl3bvtBC4XBmMg"}}
+            `https://yurari.microcms.io/api/v1/blog/${id}`,
+            { headers: { "X-MICROCMS-API-KEY": "SoWrYdhI38HUcJMQVWqhITOl3bvtBC4XBmMg" } }
         );
         const getJson = await getFetch.json();
         setAPI(getJson);
         setIsLoading(false);
-
+        setTimeout(() => {
+            hljs.highlightAll();
+        }, "10");
     }
+
     useEffect(() => {
         getAPI();
-        hljs.highlightAll();
-    });
+    }, []);
 
     if (isLoading) {
         return (
@@ -40,16 +42,16 @@ const Article = () => {
 
 
     return (
-    <div className="view-container">
-        <div className="blogView">
-            <p className="blogDate">{dayjs.utc(API.created_at).tz("Asia/Tokyo").format("YYYY-MM-DD / HH:mm")}</p>
-            <h2 className="blogTitle">{API.title}</h2>
-            <p className="blogHead">{API.head}</p>
-            <hr />
-            <div className="blogBody" dangerouslySetInnerHTML={{__html: API.body}} />
+        <div className="view-container">
+            <div className="blogView">
+                <p className="blogDate">{dayjs.utc(API.created_at).tz("Asia/Tokyo").format("YYYY-MM-DD / HH:mm")}</p>
+                <h2 className="blogTitle">{API.title}</h2>
+                <p className="blogHead">{API.head}</p>
+                <hr />
+                <div className="blogBody" dangerouslySetInnerHTML={{ __html: API.body }} />
+            </div>
         </div>
-    </div>
-  );
+    );
 };
 
 export default Article;

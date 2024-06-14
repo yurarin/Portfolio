@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./styles/index.css";
+import hljs from 'highlight.js';
+import './styles/vs2015.css';
 
 const WorkDetail = () => {
     const { id } = useParams();
@@ -15,10 +17,13 @@ const WorkDetail = () => {
         const getJson = await getFetch.json();
         setAPI(getJson);
         setIsLoading(false);
+        setTimeout(() => {
+            hljs.highlightAll();
+        }, "10");
     }
     useEffect(() => {
         getAPI();
-    });
+    },[]);
 
     if (isLoading) {
         return (

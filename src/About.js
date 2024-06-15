@@ -67,13 +67,13 @@ const About = (props) => {
         <h2>Other Skills</h2>
         <div className="skillsBox">
           <div className="skillItem">
-            <p>Python</p>
+            <p>Node.js</p>
             <CircularProgressbar 
-              value={props.userData.code_skill_python} 
-              text={`${props.userData.code_skill_python}%`} 
+              value={props.userData.code_skill_nodejs} 
+              text={`${props.userData.code_skill_nodejs}%`} 
               styles={buildStyles({
-                pathColor: "#3572A5",
-                textColor: '#3572A5'
+                pathColor: "#417E38",
+                textColor: '#417E38'
               })}
             />
           </div>

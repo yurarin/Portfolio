@@ -41,6 +41,19 @@ const Article = () => {
     dayjs.extend(timezone);
 
 
+    if (API.live) {
+        return (
+            <div className="view-container-live">
+                <div className="blogBody" dangerouslySetInnerHTML={{ __html: API.body }} />
+                <h3 className="liveTitle">{API.title}</h3>
+                <p className="blogDate liveDate">{dayjs.utc(API.created_at).tz("Asia/Tokyo").format("YYYY-MM-DD / HH:mm")}</p>
+                <hr className="liveHr" />
+                <p className="liveDetail bold">概要</p>
+                <p className="blogHead liveDetail" dangerouslySetInnerHTML={{ __html: API.liveDetail }} />
+            </div>
+        )
+    }
+
     return (
         <div className="view-container">
             <div className="blogView">

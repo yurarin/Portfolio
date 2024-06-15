@@ -40,7 +40,7 @@ const Blog = () => {
         <Link  className="link" to={article.id}>
           <p className="date">{dayjs.utc(article.created_at).tz("Asia/Tokyo").format("YYYY-MM-DD / HH:mm")}</p>
           <h3>{article.title}</h3>
-          <p className="head">{article.head}</p>
+          <p className="head" dangerouslySetInnerHTML={{__html: article.head}} />
           <hr />
         </Link>
       </div>
@@ -49,8 +49,8 @@ const Blog = () => {
 
   return (
     <div className="view-container">
-      <h1 className="blogViewTitle">雑記帳</h1>
-      <p className="blogViewDetail">ログデータ</p>
+      <h1 className="blogViewTitle">Blog</h1>
+      <p className="blogViewDetail">雑記帳・作業スペース</p>
       {article}
     </div>
   );

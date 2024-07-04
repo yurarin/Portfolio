@@ -5,6 +5,10 @@ h1, h2, h3, h4, h5, h6, p {
 	padding: 0;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	background: #fcfcfc;
 	margin: 0;  
@@ -171,4 +175,38 @@ a {
 		opacity: 1;
 		transform: translate(0);
 	}
+}
+
+
+/* About */
+
+.profileContainer {
+	margin: 45px 0;
+	width: 100%;
+}
+.profileIcon {
+	width: 100%;
+}
+.iconImg {
+	width: 20%;
+	border-radius: 50%;
+}
+.profileDetail {
+	width: 100%;
+}
+.userName {
+	font-size: 22px;
+	letter-spacing: 3px;
+	padding: 15px 0;
+}
+.userLink {
+	font-size: 23px;
+}
+.bioDetail {
+	padding: 20px 0;
+}
+p {
+	font-size: 13px;
+	letter-spacing: 4.3px;
+	line-height: 38px;
 }

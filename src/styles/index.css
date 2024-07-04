@@ -6,6 +6,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 * {
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
 }
 
@@ -79,7 +81,7 @@ body {
 }
 
 .workItem, .blogItem {
-	width: 35%;
+	width: 45%;
 	border-radius: 20px;
 	filter: drop-shadow(0px 1px 0px #e2e2e2);
 	background: #f4f4f4;
@@ -89,18 +91,14 @@ body {
 
 @media (width <= 510px) {
 	.workItem, .blogItem {
-		width: 33%;
-	}
-}
-@media (width <= 500px) {
-	.workItem, .blogItem {
-		width: 30%;
+		width: 45%;
+		margin: 0;
 	}
 }
 
 @media (width <= 380px) {
 	.workItem, .blogItem {
-		width: 26%;
+		width: 43%;
 	}
 	.itemHeading {
 		font-size: 20px;
@@ -108,9 +106,6 @@ body {
 }
 
 @media (width <= 320px) {
-	.workItem, .blogItem {
-		width: 24%;
-	}
 	.itemHeading {
 		font-size: 18px;
 	}
@@ -181,7 +176,7 @@ a {
 /* About */
 
 .profileContainer {
-	margin: 45px 0;
+	margin: 42px 0;
 	width: 100%;
 }
 .profileIcon {
@@ -200,7 +195,7 @@ a {
 	padding: 15px 0;
 }
 .userLink {
-	font-size: 23px;
+	font-size: 16px;
 }
 .bioDetail {
 	padding: 20px 0;
@@ -209,4 +204,53 @@ p {
 	font-size: 13px;
 	letter-spacing: 4.3px;
 	line-height: 38px;
+}
+@media (width <= 540px) {
+	p {
+		font-size: 12px;
+		letter-spacing: 3px;
+	}
+}
+@media (width <= 475px) {
+	p {
+		font-size: 11.2px;
+		letter-spacing: 2.3px;
+	}
+}
+@media (width <= 430px) {
+	p {
+		font-size: 10.5px;
+		letter-spacing: 2px;
+	}
+}
+@media (width <= 404px) {
+	p {
+		font-size: 10px;
+	}
+}
+@media (width <= 390px) {
+	p {
+		letter-spacing: 1.5px;
+	}
+}
+@media (width <= 373px) {
+	p {
+		font-size: 9.5px;
+	}
+}
+@media (width <= 360px) {
+	p {
+		font-size: 9.3px;
+	}
+}
+@media (width <= 355px) {
+	p {
+		letter-spacing: 1px;
+		font-size: 8.9px;
+	}
+}
+@media (width <= 326px) {
+	p {
+		font-size: 8.5px;
+	}
 }

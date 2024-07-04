@@ -1,5 +1,7 @@
 import React from "react";
 import { FiGithub } from "react-icons/fi";
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 
 const About = (props) => {
 	return (
@@ -29,25 +31,75 @@ const About = (props) => {
 				<div className="skillBox">
 					<div className="skillItem">
 						<p>HTML & CSS</p>
+						<Progress 
+							percent={props.userData.code_skill_html_css}
+							status="success"
+							theme={{
+								success: {
+									symbol: props.userData.code_skill_html_css + '%',
+									color: '#e44b23'
+								}
+							}}
+						/>
+
 					</div>
 					<div className="skillItem">
 						<p>JavaScript</p>
+						<Progress 
+							percent={props.userData.code_skill_js}
+							status="success"
+							theme={{
+								success: {
+									symbol: props.userData.code_skill_js + '%',
+									color: '#f1e05a'
+								}
+							}}
+						/>
 					</div>
 					<div className="skillItem">
 						<p>React.js</p>
+						<Progress 
+							percent={props.userData.code_skill_react}
+							status="success"
+							theme={{
+								success: {
+									symbol: props.userData.code_skill_react + '%',
+									color: '#61DBFB'
+								}
+							}}
+						/>
+
 					</div>
 				</div>
 
-				<h2>Other Skills</h2>
+				<h2>Backend Skills</h2>
 				<div className="skillBox">
 					<div className="skillItem">
 						<p>Node.js</p>
+						<Progress 
+							percent={props.userData.code_skill_nodejs}
+							status="success"
+							theme={{
+								success: {
+									symbol: props.userData.code_skill_nodejs + '%',
+									color: '#417E38'
+								}
+							}}
+						/>
+
 					</div>
 					<div className="skillItem">
 						<p>Linux</p>
-					</div>
-					<div className="skillItem">
-						<p>Studio One</p>
+						<Progress 
+							percent={props.userData.infra_skill_linux}
+							status="success"
+							theme={{
+								success: {
+									symbol: props.userData.infra_skill_linux + '%',
+									color: '#000000'
+								}
+							}}
+						/>
 					</div>
 				</div>
 			</div>    

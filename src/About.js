@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FiGithub } from "react-icons/fi";
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
@@ -6,7 +6,11 @@ import "react-sweet-progress/lib/style.css";
 const About = (props) => {
 	const date = new Date();
 	const year = date.getFullYear();
+	const getHeaderState = props.getHeaderState;
 
+	useEffect(()=>{	
+		getHeaderState(true);
+	},[]);
 
 	return (
 		<>

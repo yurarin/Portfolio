@@ -184,7 +184,6 @@ body {
 /* About */
 
 .profileContainer {
-	margin: 20px 0;
 	width: 100%;
 }
 .profileIcon {
@@ -392,7 +391,7 @@ pre {
   margin: 30px 0;
 }
 code {
-  font-size:  12.5px;
+  font-size:  10px;
   letter-spacing: 0.4px;
   line-height: 26px;
   font-family: "M PLUS 1", sans-serif;
@@ -400,3 +399,87 @@ code {
   font-style: normal;
 }
 
+.blogHeading {
+	font-size: 22px;
+	letter-spacing: 2.5px;
+	margin-bottom: 40px;
+}
+.articleBox {
+	display: flex;
+	flex-wrap: nowrap;
+	width: 100%;
+	align-items: center;
+}
+.articleBox a {
+	transition: 1s;
+	background: #f4f4f4;
+	border-radius: 14px;
+	padding: 25px;
+	margin-top: 30px;
+	width: 100%;
+	height: auto;
+	text-decoration: none;
+	color: #2e2e2e;
+	filter: drop-shadow(0px 1px 1px #e6e6dd);
+
+}
+.articleBox a:hover {
+	transition: 200ms;
+	background: #D2D2D2;
+	filter: drop-shadow(0px 2px 2px #e2e2e2);
+}
+.blogTitle {
+	margin-bottom: 10px;
+	width: 100%;
+	font-size: 15.2px;
+}
+.date {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	font-size: 11.3px;
+	line-height: normal;
+	letter-spacing: 2px;
+	color: #a9a9a9;
+}
+
+.blogTitleHeading {
+	text-align: center;
+	font-size: 21.3px;
+	margin: 40px 0;
+}
+.blogDate {
+	text-align: center;
+	font-size: 11px;
+	margin: 20px 0;
+}
+.blogView hr {
+	margin-bottom: 50px;
+}
+
+.blogView p {
+	letter-spacing: 1.3px;
+}
+
+.blogView h2 {
+	font-size: 17px;
+	margin-top: 45px;
+	margin-bottom: 12px;
+}
+.blogView h2::before {
+	content: "#";
+	font-size: 14px;
+	color: #a9a9a9;
+	padding-right: 8px;
+}
+.blogView h3 {
+	font-size: 14px;
+	margin-top: 28px;
+	margin-bottom: 12px;
+}
+.blogView h3::before {
+	content: "##";
+	font-size: 11px;
+	color: #a9a9a9;
+	padding-right: 8px;
+}

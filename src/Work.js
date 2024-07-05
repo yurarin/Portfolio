@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiBriefcase } from "react-icons/fi";
 
@@ -7,6 +7,12 @@ const Work = (props) => {
 
 	const date = new Date();
 	const year = date.getFullYear();
+	
+	const getHeaderState = props.getHeaderState;
+
+	useEffect(()=>{
+		getHeaderState(true);
+	},[]);
 
 	const works = props.works.contents;
 	const worksItem = works.map((item) => {

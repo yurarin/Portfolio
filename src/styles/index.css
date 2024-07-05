@@ -6,9 +6,15 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 * {
+	text-decoration: none;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+a {
+	text-decoration: underline;
+	color: #3d94bf;
 }
 
 body {
@@ -19,11 +25,11 @@ body {
 	font-optical-sizing: auto;
 	font-weight: normal;
 	font-style: normal;
-	color: #1f1f1f;
+	color: #2e2e2e;
 }
 
 .App {
-	padding-top: 100px;
+	padding-top: 140px;
 	padding-bottom: 100px;
 	padding-right: 20px;
 	padding-left: 20px;
@@ -65,6 +71,11 @@ body {
 	width: 100%;
 }
 
+.subContainer a {
+	text-decoration: none;
+	color: #2e2e2e;
+}
+
 .itemHeading {
 	font-size: 22px;
 	letter-spacing: 2px;
@@ -74,7 +85,7 @@ body {
 	border-radius: 20px;
 	filter: drop-shadow(0px 1px 0px #e2e2e2);
 	margin: 50px 0;
-	padding: 50px 30px;
+	padding: 43px 30px;
 	width: 100%;
 	background: #f4f4f4;
 	transition: 200ms;
@@ -118,20 +129,17 @@ body {
 }
 
 .icon {
+	margin: 0;
+	padding: 0;
 	padding-bottom: 15px;
-	font-size:40px;
+	font-size: 44px;
 }
 .copyright {
 	padding-top: 100px;
-	letter-spacing: 5px;
+	letter-spacing: 10px;
 	font-size: 12px;
 	font-weight: bold;
 	text-align: center;
-}
-
-a {
-	text-decoration: none;
-	color: #1f1f1f;
 }
 
 .fadeInA {
@@ -176,7 +184,7 @@ a {
 /* About */
 
 .profileContainer {
-	margin: 42px 0;
+	margin: 20px 0;
 	width: 100%;
 }
 .profileIcon {
@@ -196,6 +204,8 @@ a {
 }
 .userLink {
 	font-size: 16px;
+	text-decoration: none;
+	color: #2e2e2e;
 }
 .bioDetail {
 	padding: 20px 0;
@@ -254,3 +264,139 @@ p {
 		font-size: 8.5px;
 	}
 }
+
+hr {
+	border: none;
+	border-top: 0.1px solid #d9d9ce;
+}
+
+.skillHeading {
+	letter-spacing: 2px;
+	margin-top: 60px;
+	margin-bottom: 30px;
+	font-size: 16px;
+}
+.react-sweet-progress {
+	margin-bottom: 15px;
+}
+.react-sweet-progress-symbol {
+	font-size: 11.5px;
+}
+
+.workHeading {
+	font-size: 22px;
+	letter-spacing: 2.5px;
+	margin-bottom: 40px;
+}
+.workContainer {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.work {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.work a {
+	text-decoration: none;
+	color: #2e2e2e;
+}
+.workImg {
+	width: 100%;
+	border-radius: 8.5px;
+	filter: drop-shadow(0px 1px 1px #e6e6dd);
+	transition: 0.2s;
+}
+.workTitle {
+	text-align: center;
+	font-size: 16px;
+	margin-top: 13px;
+	margin-bottom: 50px;
+	font-weight: normal;
+	letter-spacing: 1px;
+}
+.workImg:hover {
+	transition: 0.4s;
+	filter: drop-shadow(0px 2px 8px #e6e6dd);
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+	width: 60px;
+	aspect-ratio: 1;
+	display: grid;
+	grid: 50%/50%;
+	color: #00000050;
+	--_g: no-repeat linear-gradient(currentColor 0 0);
+	background: var(--_g),var(--_g),var(--_g);
+	background-size: 50.1% 50.1%;
+	animation:
+	l6-0   1.5s infinite steps(1) alternate,
+	l6-0-0 3s   infinite steps(1);
+}
+.loader::before {
+	content: "";
+	background: currentColor;
+	transform: perspective(150px) rotateY(0deg) rotateX(0deg);
+	transform-origin: bottom right;
+	animation: l6-1 1.5s infinite linear alternate;
+}
+@keyframes l6-0 {
+	0%  {background-position: 0    100%,100% 100%,100% 0}
+	33% {background-position: 100% 100%,100% 100%,100% 0}
+	66% {background-position: 100% 0   ,100% 0   ,100% 0}
+}
+@keyframes l6-0-0 {
+	0%  {transform: scaleX(1)  rotate(0deg)}
+	50% {transform: scaleX(-1) rotate(-90deg)}
+}
+@keyframes l6-1 {
+	16.5%{transform:perspective(150px) rotateX(-90deg)  rotateY(0deg)    rotateX(0deg);filter:grayscale(0.8)}
+	33%  {transform:perspective(150px) rotateX(-180deg) rotateY(0deg)    rotateX(0deg)}
+	66%  {transform:perspective(150px) rotateX(-180deg) rotateY(-180deg) rotateX(0deg)}
+	100% {transform:perspective(150px) rotateX(-180deg) rotateY(-180deg) rotateX(-180deg);filter:grayscale(0.8)}
+}
+.loaderContainer {
+	width: 100%;
+	display: flex;
+	justify-content: center;	
+}
+
+.appImage {
+	border-radius: 8px;
+	width: 100%;
+	filter: drop-shadow(0px 1px 1px #e6e6dd);
+	margin-bottom: 50px;
+}
+
+.appHeading {
+	font-size: 23px;
+	letter-spacing: 1.7px;
+	margin-bottom: 50px;
+}
+
+.workDetail h2 {
+	font-size: 17px;
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+
+pre {
+  padding: 5px;
+  border-radius: 5px;
+  background: #343a42;
+  color: #f0f0f0;
+  overflow-x: auto;
+  margin: 30px 0;
+}
+code {
+  font-size:  12.5px;
+  letter-spacing: 0.4px;
+  line-height: 26px;
+  font-family: "M PLUS 1", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+

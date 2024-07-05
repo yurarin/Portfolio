@@ -31,10 +31,6 @@ function App() {
 	if (isLoading) {
 		return
 	}
-	
-	const date = new Date();
-	const year = date.getFullYear();
-
 	return (
 		<div className="App">
 			<Routes>
@@ -87,11 +83,7 @@ function App() {
 					} 
 				/>
 			</Routes>
-
-			<div className="copyright fadeInD">
-				<p>&copy; {year} yurari</p>
-			</div>
-		</div>
+	</div>
 	);
 }
 

@@ -3,6 +3,9 @@ import { FiAtSign, FiBriefcase, FiArchive } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 const Home = (props) => {
+	const date = new Date();
+	const year = date.getFullYear();
+
 	return (
 		<>
 			<div className="mainContainer fadeInA">
@@ -33,6 +36,9 @@ const Home = (props) => {
 					<h2 className="itemHeading">Blog</h2>
 				</div>
 				</Link>
+			</div>
+			<div className="copyright fadeInD">
+				<p>&copy; {year} yurari</p>
 			</div>
 		</>
 	);

@@ -4,30 +4,34 @@ import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
 
 const About = (props) => {
+	const date = new Date();
+	const year = date.getFullYear();
+
+
 	return (
 		<>
 			<div className="profileContainer">
 				<div className="profileIcon">
-					<img className="iconImg" src={props.iconUrl} alt="img" />
+					<img className="iconImg fadeInA" src={props.iconUrl} alt="img" />
 				</div>
 				<div className="profileDetail">
 					<div className="detailText">
-						<h1 className="userName">{props.userName}</h1>
+						<h1 className="userName fadeInB">{props.userName}</h1>
 						<a 
 							className="userLink" 
 							href={props.url}
 							target="_blank" 
 							rel="noopener noreferrer"
 						>
-							<FiGithub />
+							<FiGithub className="fadeInB" />
 						</a>
-						<p className="bioDetail" dangerouslySetInnerHTML={{__html: props.bioDetail}} />
+						<p className="bioDetail fadeInC" dangerouslySetInnerHTML={{__html: props.bioDetail}} />
 					</div>
 				</div>
 			</div>
-			<hr />
-			<div className="skillContainer">
-				<h2>Frontend Skills</h2>
+			<hr className="fadeInC" />
+			<div className="skillContainer fadeInD">
+				<h2 className="skillHeading">Frontend Skills</h2>
 				<div className="skillBox">
 					<div className="skillItem">
 						<p>HTML & CSS</p>
@@ -72,7 +76,7 @@ const About = (props) => {
 					</div>
 				</div>
 
-				<h2>Backend Skills</h2>
+				<h2 className="skillHeading">Backend Skills</h2>
 				<div className="skillBox">
 					<div className="skillItem">
 						<p>Node.js</p>
@@ -82,7 +86,7 @@ const About = (props) => {
 							theme={{
 								success: {
 									symbol: props.userData.code_skill_nodejs + '%',
-									color: '#417E38'
+									color: '#68a063'
 								}
 							}}
 						/>
@@ -102,7 +106,10 @@ const About = (props) => {
 						/>
 					</div>
 				</div>
-			</div>    
+			</div>
+			<div className="copyright fadeInD">
+				<p>&copy; {year} yurari</p>
+			</div>	
 		</>
 	);
 };

@@ -1,20 +1,22 @@
 import React from "react";
-import Logo from "../assets/logo.svg";
 import "../styles/header.css";
-import UrlAgn from "./UrlAgn";
 import { Link } from "react-router-dom";
+import { IoArrowBackOutline } from "react-icons/io5";
 
-const Header = () => {
-  return (
-    <React.Fragment>
-      <header>
-        <Link to="/">
-          <img src={Logo} alt="logo" />
-        </Link>
-        <UrlAgn />
-      </header>
-    </React.Fragment>
-  );
+const Header = (props) => {
+	const getHeaderState = props.getHeaderState;
+	const linkOnClick = () => {
+		getHeaderState(false);
+	};
+	return (
+		<React.Fragment>
+			<header>
+				<div className="sticky">
+					<Link to="/" onClick={linkOnClick}><IoArrowBackOutline /></Link>
+				</div>
+			</header>
+		</React.Fragment>
+	);
 };
 
 export default Header;

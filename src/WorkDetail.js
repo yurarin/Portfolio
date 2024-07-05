@@ -5,43 +5,49 @@ import hljs from 'highlight.js';
 import './styles/vs2015.css';
 
 const WorkDetail = () => {
-    const { id } = useParams();
-    const [API, setAPI] = useState("");
-    const [isLoading, setIsLoading] = useState(true);
+	const { id } = useParams();
+	const [API, setAPI] = useState("");
+	const [isLoading, setIsLoading] = useState(true);
 
-    const getAPI = async () => {
-        const getFetch = await fetch(
-            `https://yurari.microcms.io/api/v1/work/${id}`, 
-            {headers: {"X-MICROCMS-API-KEY": "SoWrYdhI38HUcJMQVWqhITOl3bvtBC4XBmMg"}}
-        );
-        const getJson = await getFetch.json();
-        setAPI(getJson);
-        setIsLoading(false);
-        setTimeout(() => {
-            hljs.highlightAll();
-        }, "10");
-    }
-    useEffect(() => {
-        getAPI();
-    },[]);
+	const getAPI = async () => {
+		const getFetch = await fetch(
+			`https://yurari.microcms.io/api/v1/work/${id}`, 
+			{headers: {"X-MICROCMS-API-KEY": "SoWrYdhI38HUcJMQVWqhITOl3bvtBC4XBmMg"}}
+		);
+		const getJson = await getFetch.json();
+		setAPI(getJson);
+		setIsLoading(false);
+		setTimeout(() => {
+			hljs.highlightAll();
+		}, "10");
+	}
+	useEffect(() => {
+		getAPI();
+	},[]);
+		
+	const date = new Date();
+	const year = date.getFullYear();
 
-    if (isLoading) {
-        return (
-            <div className="view-container">
-                <p>読み込み中です...</p>
-            </div>
-        )
-    }
+	if (isLoading) {
+		return (
+			<div className="loaderContainer">
+				<div class="loader" />
+			</div>
+		)
+	}
 
-    return (
-    <div className="view-container">
-        <div className="workDetail">
-            <h2>{API.title}</h2>
-            <img src={API.work_img.url} alt="img" />
-            <p dangerouslySetInnerHTML={{__html: API.about}} />
-        </div>
-    </div>
-  );
+	return (
+		<>
+			<div className="workDetail">
+				<h1 className="appHeading fadeInA">{API.title}</h1>
+				<img className="appImage fadeInB" src={API.work_img.url} alt="img" />
+				<p className="fadeInC" dangerouslySetInnerHTML={{__html: API.about}} />
+			</div>
+			<div className="copyright fadeInD">
+				<p>&copy; {year} yurari</p>
+			</div>
+		</>	
+	);
 };
 
 export default WorkDetail;

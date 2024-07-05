@@ -383,20 +383,20 @@ hr {
 }
 
 pre {
-  padding: 5px;
-  border-radius: 5px;
-  background: #343a42;
-  color: #f0f0f0;
-  overflow-x: auto;
-  margin: 30px 0;
+	padding: 5px;
+	border-radius: 5px;
+	background: #343a42;
+	color: #f0f0f0;
+	overflow-x: auto;
+	margin: 30px 0;
 }
 code {
-  font-size:  10px;
-  letter-spacing: 0.4px;
-  line-height: 26px;
-  font-family: "M PLUS 1", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+	font-size:  10px;
+	letter-spacing: 0.4px;
+	line-height: 26px;
+	font-family: "M PLUS 1", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
 }
 
 .blogHeading {
@@ -482,4 +482,42 @@ code {
 	font-size: 11px;
 	color: #a9a9a9;
 	padding-right: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #1a1d21;
+		color: #f4f4f4;
+	}
+	.aboutItem, .workItem, .blogItem, .articleBox a {
+		background: #343a42;
+		filter: drop-shadow(0px 1px 2px #272c32);
+	}
+	.aboutItem:hover, .workItem:hover, .blogItem:hover, .articleBox a:hover{
+		transition: 200ms;
+		background: #272c32;
+		filter: drop-shadow(0px 2px 2px #141619);
+	}
+	.subContainer a , .workTitle, .articleBox a, .userLink {
+		color: #f4f5f6;	
+	}
+	.workImg {
+		filter: drop-shadow(0px 1px 2px #272c32);
+	}
+	.workImg:hover {
+		filter: drop-shadow(0px 2px 2px #141619);
+	}
+	.loader {
+		color: #c9cacc50;
+	}
+	.appImage {
+		filter: drop-shadow(0px 1px 2px #272c32);
+	}
+	@media (prefers-color-scheme: dark) {
+		.react-sweet-progress-symbol {                                                                                                                                 
+			color: #f4f5f6;
+		}
+	}
+
+
 }

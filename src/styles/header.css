@@ -19,3 +19,9 @@ header a {
 		width: 650px;
 	}
 }
+
+@media (prefers-color-scheme: dark) {
+	header a {
+		color: #f4f5f6;
+	}
+}

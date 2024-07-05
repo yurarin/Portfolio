@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { FiGithub } from "react-icons/fi";
 import { Progress } from 'react-sweet-progress';
-import "react-sweet-progress/lib/style.css";
 
 const About = (props) => {
 	const date = new Date();

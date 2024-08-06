@@ -7,7 +7,7 @@ const Home = (props) => {
 	const year = date.getFullYear();
 
 	return (
-		<>
+		<div className="App">
 			<div className="mainContainer fadeInA">
 				<div className="displayImageBox">
 					<img className="displayImage" src={props.iconUrl} alt="img" />
@@ -40,7 +40,7 @@ const Home = (props) => {
 			<div className="copyright fadeInD">
 				<p>&copy; {year} yurari</p>
 			</div>
-		</>
+		</div>
 	);
 };
 

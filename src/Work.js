@@ -1,18 +1,13 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiBriefcase } from "react-icons/fi";
+import Header from "./components/Header";
 
 const Work = (props) => {
 	// const workContents = props.works.contents;
 
 	const date = new Date();
 	const year = date.getFullYear();
-	
-	const getHeaderState = props.getHeaderState;
-
-	useEffect(()=>{
-		getHeaderState(true);
-	},[]);
 
 	const works = props.works.contents;
 	const worksItem = works.map((item) => {
@@ -28,14 +23,17 @@ const Work = (props) => {
 
 	return (
 		<>
-			<FiBriefcase className="icon fadeInB" />
-			<h1 className="workHeading fadeInB">Work</h1>
-			<div className="workContainer fadeInC">
-				{worksItem}
+			<Header url="/" />
+			<div className="App">
+				<FiBriefcase className="icon fadeInB" />
+				<h1 className="workHeading fadeInB">Work</h1>
+				<div className="workContainer fadeInC">
+					{worksItem}
+				</div>
+				<div className="copyright fadeInD">
+					<p>&copy; {year} yurari</p>
+				</div>
 			</div>
-			<div className="copyright fadeInD">
-				<p>&copy; {year} yurari</p>
-			</div>	
 		</>
 	);
 };

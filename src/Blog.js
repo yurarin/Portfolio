@@ -4,12 +4,11 @@ import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import { Link } from "react-router-dom";
 import { FiArchive } from "react-icons/fi";
+import Header from "./components/Header";
 
 const Blog = (props) => {
 	const [API, setAPI] = useState("");
 	const [isLoading, setIsLoading] = useState(true);
-	
-	const getHeaderState = props.getHeaderState;
 
 	const getAPI = async () => {
 		const getFetch = await fetch(
@@ -28,7 +27,6 @@ const Blog = (props) => {
 
 	useEffect(() => {
 		getAPI();
-		getHeaderState(true);
 	}, []);
 
 	const date = new Date();
@@ -36,8 +34,10 @@ const Blog = (props) => {
 
 	if (isLoading) {
 		return (
-			<div className="loaderContainer">
-				<div className="loader" /> 
+			<div className="App">
+				<div className="loaderContainer">
+					<div className="loader" /> 
+				</div>
 			</div>
 		)
 	};
@@ -55,12 +55,15 @@ const Blog = (props) => {
 
 	return (
 		<>
-			<FiArchive className="icon fadeInB" />
-			<h1 className="blogHeading fadeInB">Blog</h1>
-			{article}
-			<div className="copyright fadeInD">
-				<p>&copy; {year} yurari</p>
-			</div>	
+			<Header url="/" />
+			<div className="App">
+				<FiArchive className="icon fadeInB" />
+				<h1 className="blogHeading fadeInB">Blog</h1>
+				{article}
+				<div className="copyright fadeInD">
+					<p>&copy; {year} yurari</p>
+				</div>	
+			</div>
 		</>
 	);
 };
